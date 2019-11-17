@@ -35,7 +35,7 @@ public class MoveCommandTest {
 
 	
     @Test
-    public void testGivenPlayViewWhenCorrectFormatThenOk() {
+    public void testGivenMoveCommandWhenCorrectFormatThenOk() {
         when(playController.getColor()).thenReturn(Color.BLACK);
         when(console.readString("Mueven las negras: ")).thenReturn("32.41");
         moveCommand.execute(playController);
@@ -43,7 +43,7 @@ public class MoveCommandTest {
     }
     
     @Test
-    public void testGivenPlayViewWhenInteractWithEmptyThenError() {
+    public void testGivenMoveCommandWhenInteractWithEmptyThenError() {
         when(playController.getColor()).thenReturn(Color.BLACK);
         when(console.readString("Mueven las negras: ")).thenReturn("").thenReturn("32.41");
         moveCommand.execute(playController);
@@ -51,7 +51,7 @@ public class MoveCommandTest {
     }
 
     @Test
-    public void testGivenPlayViewWhenInteractWithBadFormatThenError() {
+    public void testGivenMoveCommandWhenInteractWithBadFormatThenError() {
         when(playController.getColor()).thenReturn(Color.BLACK);
         when(console.readString("Mueven las negras: ")).thenReturn("a3.42").thenReturn("32.41");
         moveCommand.execute(playController);
@@ -59,7 +59,7 @@ public class MoveCommandTest {
     }
 
     @Test
-    public void testGivenPlayViewWhenInteractWithBadRangeThenError() {
+    public void testGivenMoveCommandWhenInteractWithBadRangeThenError() {
         when(playController.getColor()).thenReturn(Color.BLACK);
         when(console.readString("Mueven las negras: ")).thenReturn("93.49").thenReturn("32.41");
         moveCommand.execute(playController);
