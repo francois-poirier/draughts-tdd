@@ -20,4 +20,9 @@ public class State {
 	public StateValue getValueState() {
 		return this.stateValue;
 	}
+
+	public void cancel() {
+		// TODO Auto-generated method stub
+		
+	}
 }

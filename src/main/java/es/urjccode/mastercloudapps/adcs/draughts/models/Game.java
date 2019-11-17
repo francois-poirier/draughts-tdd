@@ -88,4 +88,9 @@ public class Game {
 		return this.board + "\n" + this.turn;
 	}
 
+	public void cancel() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
