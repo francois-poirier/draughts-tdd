@@ -6,6 +6,7 @@ public class CancelCommand {
 
     
     public void execute(PlayController playController) {
-    	
+    	 assert playController != null;
+    	 playController.cancel();
     }
 }
