@@ -1,2 +1,1 @@
-# draughts
 # draughts-tdd

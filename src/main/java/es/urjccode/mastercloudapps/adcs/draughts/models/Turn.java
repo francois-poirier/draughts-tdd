@@ -1,0 +1,30 @@
+package es.urjccode.mastercloudapps.adcs.draughts.models;
+
+class Turn {
+
+    private Color color;
+
+    Turn(){
+        this.color = Color.WHITE;
+    }
+
+    void change(){
+        this.color = Color.values()[(this.color.ordinal()+1)%2];
+    }
+
+    Color getColor() {
+		return this.color;
+    }
+ 
+	boolean isColor(Color color2) {
+		return false;
+	}
+	
+    @Override
+    public String toString(){
+        return this.color.name();
+    }
+
+
+
+}
