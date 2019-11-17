@@ -9,13 +9,12 @@ public class MoveCommand extends Command {
     private static final String[] COLORS = { "blancas", "negras" };
     private static final String MESSAGE = "Derrota!!! No puedes mover tus fichas!!!";
     private static final String FORMAT = "xx.xx";
-    
-    public MoveCommand(){
-       super();
+    public static final String COMMAND_MOVE = " Mover";
+    public MoveCommand(PlayController playController){
+       super(COMMAND_MOVE,playController);
     }
     
-	public void execute(PlayController playController) {
-        assert playController != null;
+	public void execute() {
         Coordinate origin = null;
         Coordinate target = null;
         Error error;

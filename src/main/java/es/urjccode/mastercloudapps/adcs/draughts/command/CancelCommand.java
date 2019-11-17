@@ -4,13 +4,13 @@ import es.urjccode.mastercloudapps.adcs.draughts.controllers.PlayController;
 
 public class CancelCommand extends Command {
 
-    
-    public CancelCommand(){
-       super();
+	public static final String COMMAND_CANCEL = " Cancelar";
+    public CancelCommand(PlayController playController){
+       super(COMMAND_CANCEL,playController);
     }
     
-    public void execute(PlayController playController) {
-    	 assert playController != null;
+    public void execute() {
     	 playController.cancel();
     }
+
 }

@@ -32,7 +32,7 @@ public class CancelCommandTest {
     
     @Test
     public void testGivenCancelCommandWhenChooseCanceThenStop() {
-    	cancelCommand.execute(playController);
+    	cancelCommand.execute();
     	verify(playController).cancel();
     }
 
