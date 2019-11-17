@@ -33,4 +33,19 @@ public class GameWithDraughtsTest {
         game.move(new Coordinate(6,5), new Coordinate(7,4));
         assertTrue(game.getPiece(new Coordinate(7,4)) instanceof Draught);
     }
+    
+    @Test
+    public void testGivenGameWhenWhitePawnAtLimitAndEatingThenNewDraugts(){
+        game.move(new Coordinate(2,4), new Coordinate(0,6));
+        assertTrue(game.getPiece(new Coordinate(0,6)) instanceof Draught);
+    }
+
+    @Test
+    public void testGivenGameWhenBlackPawnAtLimitAndEatingThenNewDraugts(){
+        game.move(new Coordinate(1,2), new Coordinate(0,3));
+        game.move(new Coordinate(5,0), new Coordinate(7,2));
+        assertTrue(game.getPiece(new Coordinate(7,2)) instanceof Draught);
+    }
+    
+
 }
