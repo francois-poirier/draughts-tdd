@@ -9,27 +9,25 @@ import es.urjccode.mastercloudapps.adcs.draughts.models.State;
 
 public class PlayController extends AcceptorController {
 
+	private CancelController cancelController;
+	private MoveController moveController;
+	
 	public PlayController(Game game, State state) {
 		super(game, state);
+		this.moveController = new MoveController(game,state);
+		this.cancelController = new CancelController(game,state);
 	}
 
 	public void move(Coordinate origin, Coordinate target) {
-		assert this.isCorrect(origin, target) == null;
-		this.game.move(origin, target);
-		if (this.game.isBlocked()) {
-			this.state.next();
-		}
+		moveController.move(origin, target);
 	}
 
 	public Error isCorrect(Coordinate origin, Coordinate target){
-		assert origin != null;
-		assert target != null;
-		return this.game.isCorrect(origin, target);
+		return moveController.isCorrect(origin, target);
 	}	
 
 	public Piece getPiece(Coordinate coordinate) {
-		assert coordinate != null;
-		return this.game.getPiece(coordinate);
+		return moveController.getPiece(coordinate);
 	}
 
 	public Color getColor() {
@@ -40,6 +38,10 @@ public class PlayController extends AcceptorController {
 		return this.game.isBlocked();
 	}
 
+	public void cancel() {
+		cancelController.cancel();
+	}
+	
 	@Override
 	public void accept(ControllersVisitor controllersVisitor) {
 		assert controllersVisitor != null;
