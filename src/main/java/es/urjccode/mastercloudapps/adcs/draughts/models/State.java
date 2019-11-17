@@ -22,7 +22,7 @@ public class State {
 	}
 
 	public void cancel() {
-		// TODO Auto-generated method stub
+		this.stateValue = StateValue.FINAL;
 		
 	}
 }
