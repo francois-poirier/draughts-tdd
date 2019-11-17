@@ -10,8 +10,7 @@ public class CancelController extends Controller {
 	}
 
 	public void cancel() {
-		// TODO Auto-generated method stub
-		
+		state.cancel();
 	}
 
 }
