@@ -7,6 +7,7 @@ import es.urjccode.mastercloudapps.adcs.draughts.command.Command;
 import es.urjccode.mastercloudapps.adcs.draughts.command.MoveCommand;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.PlayController;
 import es.urjccode.mastercloudapps.adcs.draughts.utils.Console;
+import es.urjccode.mastercloudapps.adcs.draughts.utils.Range;
 
 public class PlayMenu {
 	
@@ -32,7 +33,7 @@ public class PlayMenu {
 				this.console.writeln((i + 1) + ") " + commandList.get(i).getTitle());
 			}
 			option = this.console.readInt("") - 1;
-			if (option!= 0 || option!= 1) {
+			if (!new Range(0, commandList.size()-1).contains(option)) {
 				error = true;
 			} 				
 		} while (error);
