@@ -32,9 +32,19 @@ class Board implements PieceProvider {
         return this.getSquare(coordinate).remove();
     }
 
-    void move(Coordinate origin, Coordinate target) {
-        this.put(target, this.remove(origin));
-    }
+	void move(Coordinate origin, Coordinate target) {
+		Piece piece = this.remove(origin);
+		if (piece.getColor() == Color.WHITE && target.getRow() == 0) {
+			this.put(target, new Draught(Color.WHITE));
+			return;
+		}
+		if (piece.getColor() == Color.BLACK && target.getRow() == (this.getDimension() - 1)) {
+			this.put(target, new Draught(Color.BLACK));
+			return;
+		}
+
+		this.put(target, piece);
+	}
 
     @Override
     public Piece getPiece(Coordinate coordinate) {
