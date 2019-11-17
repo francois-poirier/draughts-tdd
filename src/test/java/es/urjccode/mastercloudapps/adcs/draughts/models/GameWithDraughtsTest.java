@@ -1,5 +1,6 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -47,5 +48,15 @@ public class GameWithDraughtsTest {
         assertTrue(game.getPiece(new Coordinate(7,2)) instanceof Draught);
     }
     
+    @Test
+    public void testGivenGameWhenWhiteDraughMoveBackThenOK(){
+        assertNull(game.isCorrect(new Coordinate(0,7), new Coordinate(1,6)));
+    }
+
+    @Test
+    public void testGivenGameWhenBlackDraughMoveBackThenOK(){
+        game.move(new Coordinate(1,2), new Coordinate(0,3));
+        assertNull(game.isCorrect(new Coordinate(2,1), new Coordinate(1,0)));
+    }
 
 }
