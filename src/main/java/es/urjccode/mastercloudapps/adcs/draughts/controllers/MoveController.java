@@ -13,18 +13,22 @@ public class MoveController extends Controller {
 	}
 
 	public Error isCorrect(Coordinate origin, Coordinate target) {
-		// TODO Auto-generated method stub
-		return null;
+		assert origin != null;
+		assert target != null;
+		return this.game.isCorrect(origin, target);
 	}
 
 	public void move(Coordinate origin, Coordinate target) {
-		// TODO Auto-generated method stub
-		
+		assert this.isCorrect(origin, target) == null;
+		this.game.move(origin, target);
+		if (this.game.isBlocked()) {
+			this.state.next();
+		}
 	}
 
 	public Piece getPiece(Coordinate origin) {
-		// TODO Auto-generated method stub
-		return null;
+		assert origin != null;
+		return this.game.getPiece(origin);
 	}
 
 }
