@@ -3,18 +3,15 @@ package es.urjccode.mastercloudapps.adcs.draughts.command;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.PlayController;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Coordinate;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Error;
-import es.urjccode.mastercloudapps.adcs.draughts.utils.Console;
 
-public class MoveCommand {
+public class MoveCommand extends Command {
 	
     private static final String[] COLORS = { "blancas", "negras" };
     private static final String MESSAGE = "Derrota!!! No puedes mover tus fichas!!!";
     private static final String FORMAT = "xx.xx";
-
-    protected Console console;
     
     public MoveCommand(){
-        this.console = new Console();
+       super();
     }
     
 	public void execute(PlayController playController) {
