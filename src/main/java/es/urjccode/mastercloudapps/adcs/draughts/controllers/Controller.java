@@ -30,7 +30,5 @@ public abstract class Controller {
 	public StateValue getValueState() {
 		return this.state.getValueState();
 	}
-	
-	abstract public void accept(ControllersVisitor controllersVisitor);
     
 }

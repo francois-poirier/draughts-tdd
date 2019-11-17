@@ -1,6 +1,6 @@
 package es.urjccode.mastercloudapps.adcs.draughts.views;
 
-import es.urjccode.mastercloudapps.adcs.draughts.controllers.Controller;
+import es.urjccode.mastercloudapps.adcs.draughts.controllers.AcceptorController;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.ControllersVisitor;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.PlayController;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.ResumeController;
@@ -18,7 +18,7 @@ public class View implements ControllersVisitor {
         this.resumeView = new ResumeView();
     }
 
-    public void interact(Controller controller) {
+    public void interact(AcceptorController controller) {
         assert controller != null;
         controller.accept(this);
     }

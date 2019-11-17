@@ -7,7 +7,7 @@ import es.urjccode.mastercloudapps.adcs.draughts.models.Game;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Piece;
 import es.urjccode.mastercloudapps.adcs.draughts.models.State;
 
-public class PlayController extends Controller {
+public class PlayController extends AcceptorController {
 
 	public PlayController(Game game, State state) {
 		super(game, state);
