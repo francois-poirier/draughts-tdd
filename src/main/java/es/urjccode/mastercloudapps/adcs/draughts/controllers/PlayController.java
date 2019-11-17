@@ -31,11 +31,11 @@ public class PlayController extends AcceptorController {
 	}
 
 	public Color getColor() {
-		return this.game.getColor();
+		return moveController.getColor();
 	}
 
 	public boolean isBlocked() {
-		return this.game.isBlocked();
+		return moveController.isBlocked();
 	}
 
 	public void cancel() {
