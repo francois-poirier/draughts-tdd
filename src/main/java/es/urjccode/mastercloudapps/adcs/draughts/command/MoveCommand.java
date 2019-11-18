@@ -3,6 +3,8 @@ package es.urjccode.mastercloudapps.adcs.draughts.command;
 import es.urjccode.mastercloudapps.adcs.draughts.controllers.PlayController;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Coordinate;
 import es.urjccode.mastercloudapps.adcs.draughts.models.Error;
+import es.urjccode.mastercloudapps.adcs.draughts.views.GameView;
+
 
 public class MoveCommand extends Command {
 	
@@ -38,6 +40,9 @@ public class MoveCommand extends Command {
             playController.move(origin, target);
             if (playController.isBlocked()){
                 this.console.writeln(MoveCommand.MESSAGE);
+            }
+            else {
+                new GameView().write(playController);
             }
         }
 		
